@@ -1,6 +1,6 @@
 # Enhanced Naive Bayes Classifiers with Discretization and KDE
 
-This project explores advanced techniques to improve the performance of Naive Bayes classifiers. By incorporating discretization methods and introducing Kernel Density Estimation (KDE), the project evaluates the impact of these enhancements on classification accuracy and robustness. Completed as part of the **Machine Learning and Data Mining** course in the Master’s program in Data Science and Engineering, this project achieved a grade of **19.2/20**.
+This project explores advanced methods to improve Naive Bayes classifiers by incorporating discretization techniques and Kernel Density Estimation (KDE). Completed as part of the **Machine Learning and Data Mining** course in the Master’s program in Data Science and Engineering, the project achieved a grade of **19.2/20**.
 
 ---
 
@@ -14,9 +14,9 @@ This project explores advanced techniques to improve the performance of Naive Ba
 
 ### Key Highlights
 
-- Discretization improves the performance of Naive Bayes classifiers by transforming continuous features into discrete intervals, which simplifies the data structure and reduces noise, making the classifiers more efficient and effective in capturing feature relationships.
-- KDE Naive Bayes surpasses Gaussian Naive Bayes in capturing complex feature distributions, offering improved adaptability for continuous data.
-- Systematic evaluation demonstrates the trade-offs and advantages of these techniques across different scenarios.
+- Discretization improves the performance of Multinomial Naive Bayes classifiers by simplifying continuous features, reducing noise, and better capturing feature relationships.
+- Discretization leads to worse performance in Gaussian Naive Bayes, as the assumption of normality conflicts with discretized data.
+- KDE Naive Bayes surpasses Gaussian Naive Bayes by effectively capturing complex and multimodal distributions in continuous data.
 
 ---
 
@@ -41,12 +41,12 @@ This project explores advanced techniques to improve the performance of Naive Ba
 #### 2.2 Gaussian Naive Bayes (GNB)
 
 - Tested with the same discretization techniques to analyze their impact on a continuous data model.
-- Conducted detailed comparisons of accuracy and ROC curves.
+- Found that discretization led to worse results due to GNB’s reliance on normality for continuous features.
 
 #### 2.3 KDE Naive Bayes
 
 - Introduced KDE Naive Bayes to handle continuous features without discretization.
-- Leveraged kernel density functions to better approximate feature distributions by smoothing data points and creating a non-parametric estimate of the probability density function. This approach allows KDE Naive Bayes to capture complex and multimodal distributions that Gaussian Naive Bayes, with its assumption of normality, may fail to model effectively.
+- Leveraged kernel density functions to approximate feature distributions by smoothing data points, enabling KDE Naive Bayes to handle complex and multimodal distributions.
 - Compared KDE Naive Bayes with Gaussian Naive Bayes through 10-fold cross-validation and hyperparameter tuning.
 
 ### 3. Results and Insights
@@ -55,21 +55,21 @@ This project explores advanced techniques to improve the performance of Naive Ba
   - ROC Curves: Evaluated classifier performance across thresholds.
   - Cross-Validation: Assessed robustness and generalization.
 - **Comparative Analysis**:
-  - Demonstrated the advantages of discretization for both Multinomial and Gaussian Naive Bayes models.
-  - Highlighted the superiority of KDE Naive Bayes in scenarios with complex data distributions.
+  - Discretization improved Multinomial Naive Bayes but worsened Gaussian Naive Bayes.
+  - KDE Naive Bayes outperformed Gaussian Naive Bayes in continuous data scenarios.
 
 ### 4. Conclusions and Recommendations
 
-- Discretization significantly boosts the performance of Naive Bayes classifiers, especially for categorical data.
-- KDE Naive Bayes is a robust choice for continuous data, outperforming Gaussian Naive Bayes in various cases.
-- Recommendations for future work include exploring hybrid approaches and applying these methods to real-world datasets.
+- Discretization boosts the performance of Multinomial Naive Bayes.
+- KDE Naive Bayes is a robust alternative for continuous data, offering better adaptability compared to Gaussian Naive Bayes.
+- Recommendations for future work include exploring hybrid approaches and applying these methods to diverse datasets.
 
 ---
 
 ## Key Takeaways
 
 - **Discretization Techniques**:
-  - Equal width and equal depth binning enhance the compatibility and effectiveness of Naive Bayes models.
+  - Equal width and equal depth binning enhance the compatibility and effectiveness of Multinomial Naive Bayes.
 - **KDE Naive Bayes**:
   - Offers a flexible and robust alternative to Gaussian Naive Bayes by better modeling continuous features.
 - **Systematic Evaluation**:
@@ -82,6 +82,3 @@ This project explores advanced techniques to improve the performance of Naive Ba
 - Explore hybrid models combining discretization with KDE techniques.
 - Apply these methods to larger, more diverse datasets to test scalability and robustness.
 - Investigate the integration of other feature engineering techniques for further performance improvements.
-
----
-
